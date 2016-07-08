@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>My.IIT | Online Portal for Students, Faculty, Lecturers and Staff</title>
+	<link rel="icon" type="image/png" href="http://x4150my.msuiit.edu.ph/my/v2/assets/img/favicon.ico">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/bootstrap.mini.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/bootstrap.com.css" type="text/css" media="print">
+	<link rel="stylesheet" href="./css/main.css" type="text/css">
+	<link rel="apple-touch-icon" href="http://x4150my.msuiit.edu.ph/my/v2/assets/img/xapple-touch-icon.png.pagespeed.ic.CK3PJ--mMw.webp">
+	<link rel="apple-touch-icon-precomposed" href="http://x4150my.msuiit.edu.ph/my/v2/assets/img/xapple-touch-icon-precomposed.png.pagespeed.ic.CK3PJ--mMw.webp">
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="skin-iitred sidebar-mini fixed">
+	<div class="wrapper">
+		<input type="hidden" name="root_path" id="root_path" value="/my/v2/">
+		<header class="main-header">
+		
+			<a href="http://x4150my.msuiit.edu.ph/my/v2/index.php?ref=logo" class="logo">
+				<span class="logo-mini"><b>DTS</b></span>
+				<span class="logo-lg"><b>DTS</b></span>
+			</a>
+
+			<nav class="navbar navbar-static-top" role="navigation">
+				<a href="http://x4150my.msuiit.edu.ph/my/v2/index.php?ref=old-myiit#sidebar-toggle" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+					<span class="sr-only">Toggle navigation</span>
+				</a>
+ 
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<li class="dropdown user user-menu">
+ 
+						<a href="http://x4150my.msuiit.edu.ph/my/v2/index.php?ref=old-myiit#" class="dropdown-toggle" data-toggle="dropdown">
+ 
+						<div class="user-image"><img src="./images/xno-photo.png.pagespeed.ic.LYujHrfwVW.webp" class="profile-photo" alt="User Image" data-pagespeed-url-hash="3306182933" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></div>
+ 
+						<span class="hidden-xs">Clyde Herald</span>
+						</a>
+							<ul class="dropdown-menu boxshadow-light-dark">
+								<li class="user-header">
+									<div class="user-image"><a href="http://x4150my.msuiit.edu.ph/my/v2/profile.php" title="View Profile"><img src="./images/xno-photo.png.pagespeed.ic.LYujHrfwVW.webp" alt="User Image" data-pagespeed-url-hash="3306182933" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a></div>
+									<p>
+										Clyde Herald Matugas<br>
+										<small>3rd year BSIS </small>
+									</p>
+								</li>
+ 
+								<li class="user-footer">
+									<p><a class="btn btn-default btn-block break-me" target="_blank" href="http://x4150my.msuiit.edu.ph/my/v2/redirect.php?id=mail&amp;ref=navbar"><img width="16" height="16" src="./images/gmail-16.png.pagespeed.ce.OljeaHSGLU.png" data-pagespeed-url-hash="1758099414" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">&nbsp;&nbsp;clydeherald.matugas@g.msuiit.edu.ph</a></p>
+									<div class="btn-group" role="group" aria-label="...">
+										<a href="http://x4150my.msuiit.edu.ph/my/v2/profile.php?ref=navbar" class="btn btn-default btn-flat">Profile</a>
+										<a href="http://x4150my.msuiit.edu.ph/my/v2/settings.php?ref=navbar" class="btn btn-default btn-flat">Settings</a>
+									</div>
+									<div class="pull-right">
+										<a href="http://x4150my.msuiit.edu.ph/my/v2/logout.php?ref=navbar" class="btn btn-default btn-flat">Logout</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+ 
+		<aside class="main-sidebar hidden-print">
+			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100vh;"><section class="sidebar" id="sidebar" style="overflow: hidden; width: auto; height: 100vh;">
+				<div class="user-panel">
+					<div class="image">
+						<form name="upload-photo" method="post">
+							<a href="http://x4150my.msuiit.edu.ph/my/v2/cropper.php" class="btn-upload" id="btn-upload-photo">
+							<img src="./images/xno-photo.png.pagespeed.ic.LYujHrfwVW.webp" class="profile-photo " alt="User Image" data-pagespeed-url-hash="3306182933" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+							<div class="profile-pic-selector" id="profile-pic-selector">
+								<i class="fa fa-camera"></i>
+								<span class="pps-text">Update Photo</span>
+							</div>
+							</a>
+							<input class="file-upload" type="file" accept="image/jpeg, image/png">
+						</form>
+					</div>
+					<div class="info ellipsis">Clyde Herald Matugas </div>
+				</div>
+			</section>
+			<div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 514.286px; background: rgb(119, 119, 119);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+		</aside>
+ 
+		<div class="content-wrapper" style="background-image: url(/my/v2/assets/img/bg/afternoon/726.jpg);">
+			<section class="content-header">
+				<h1>Good afternoon, Clyde Herald! </h1>
+				<div class="row">
+					<div class="container">
+						<div class="col-lg.12">
+							<div class="input-group">
+								<input type="text" class="form-control" aria-label="...">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status <span class="caret"></span></button>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li><a href="#">Inprogress</a></li>
+										<li><a href="#">Sustained</a></li>
+										<li><a href="#">Retained</a></li>
+									</ul>
+								</div><!-- /btn-group -->
+							</div><!-- /input-group -->
+						</div><!-- /.col-lg-6 -->
+					</div><!-- /.row -->
+				</div>
+			</section>
+		
+			<section class="content">
+				<div class="box">
+					<div class="box-body">
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover table-striped table-evaluation">
+								<tbody><tr class="active">
+									<th width="3%">Tracking No</th>
+									<th width="3%">Requestor</th>
+									<th width="3%">Request Type</th>
+									<th width="3%">Date Submitted</th>
+									<th width="3%">Time Lapse</th>
+									<th width="3%">Status</th>
+									<th width="3%">Action</th>
+								</tr>
+								<tr>
+									<td>000001 </td>
+									<td>Lemuel Clark Velasco :P </td>
+									<td>Travel Order </td>
+									<td>01/25/2016 </td>
+									<td>7-10 days </td>
+									<td>Completed</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr>
+								<tr>
+									<td>000002 </td>
+									<td>Lemuel Clark Velasco </td>
+									<td>Purchase Order</td>
+									<td>02/15/2016 </td>
+									<td>15 days</td>
+									<td>Pending</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr>
+								<tr>
+									<td>000003 </td>
+									<td>Adrian Galido </td>
+									<td>Travel Order</td>
+									<td>03/15/2016 </td>
+									<td>7-10 days</td>
+									<td>Completed</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr>
+								<tr>
+									<td>000004 </td>
+									<td>Lemuel Clark Velasco </td>
+									<td>Purchase Order</td>
+									<td>04/20/2016 </td>
+									<td>15 days</td>
+									<td>Pending</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr>
+								<tr>
+									<td>000005 </td>
+									<td>Lemuel Clark Velasco </td>
+									<td>Travel Order</td>
+									<td>05/20/2016 </td>
+									<td>7-10 days</td>
+									<td>Completed</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr>
+								<tr>
+									<td>000006 </td>
+									<td>Lemuel Clark Velasco </td>
+									<td>Travel Order</td>
+									<td>06/11/2016 </td>
+									<td>7-10 days</td>
+									<td>Completed</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr>
+								<tr>
+									<td>000007 </td>
+									<td>Lemuel Clark Velasco </td>
+									<td>Travel Order</td>
+									<td>07/01/2016 </td>
+									<td>7-10 days</td>
+									<td>Pending</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr>
+								<tr>
+									<td>000008 </td>
+									<td>Lemuel Clark Velasco </td>
+									<td>Purchase Order</td>
+									<td>07/02/2016 </td>
+									<td>15 days</td>
+									<td>Pending</td>
+									<td><span class="btn btn-default">Recommend </span></td>
+								</tr></tbody>
+							</table>
+						</div> 
+					</div> 
+				</div>
+			</section>
+		</div>
+		
+		<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm modal-feedback">
+				<div class="modal-content">
+					<form accept-charset="UTF-8" action="http://x4150my.msuiit.edu.ph/my/v2/actions.php" name=	"frm-feedback" method="post">
+						<div class="modal-body">
+							<span class="feedback-status-message text-center hidden"></span>
+							<textarea class="form-control" id="feedback" name="feedback" placeholder="Leave a comment for My.IIT improvement..." rows="6"></textarea>
+							<button type="submit" class="btn btn-block btn-info btn-fill" name="btn-feedback" id="btn-feedback">Give feedback <i class="fa fa-send"></i></button>
+						</div>
+					</form>
+				</div>
+			</div> 
+			<script src="./js/common.min.js"></script>
+			<script src="./js/jquery.slimscroll.min.js"></script>
+			<script src="./js/app.min.js"></script>
+			<script type="text/javascript">$(document).ready(function(){$("#sidebar").slimscroll({height:"100vh",color:"#777",size:"7px"});});</script>
+ 
+			<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-37529404-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
+		</div>
+	</div>
+</body>
+</html>
