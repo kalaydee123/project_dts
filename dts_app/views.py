@@ -45,4 +45,4 @@ class Raw_BaseView(TemplateView):
     """
     Just the raw html form
     """    
-    template_name = "dts_app/validator_base.html"
+    template_name = "dts_app/raw_sample.html"
