@@ -1,0 +1,28 @@
+.top_column {
+background-color: #a41d21;	
+}
+
+.top_column th {
+	color: #ffffff;
+}
+
+tbody{
+background-color: #ffffff;	
+}
+
+.hover_effect tr:hover{
+	background-color: #f2dede;
+}
+
+ {
+	background-color: #a41d21;	
+}
+.pagination li:hover {
+		background-color: #f2dede;
+} 
+
+.input-group {
+	width: 300px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
