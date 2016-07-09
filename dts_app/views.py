@@ -61,4 +61,4 @@ class OC_BaseView(TemplateView):
     """
     Just the raw html form
     """    
-    template_name = "dts_app/index.html"
+    template_name = "dts_app/oc_base.html"
