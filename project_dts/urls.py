@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf import settings
+from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic import TemplateView
+from django.views import defaults as default_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    
+    url(r'^users/', include("project_dts.users.urls", namespace="users")),
+    url(r'^dts_app/', include("dts_app.urls", namespace="dts_app")),
 ]

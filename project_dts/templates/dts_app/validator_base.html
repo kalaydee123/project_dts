@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Validate Document{% endblock %}
+
+{% block content %}
+    {% include 'soamgr/forms/order_form_css.html' %} 
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <form class="form-horizontal" method="post" id="soamgr_oa_create" action="{% url 'soamgr:adviser_oa_review' order.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input id="orderid" name="orderid" type="hidden" value="{{order.id}}">
+            {% include 'soamgr/forms/oa_form.html' with form_type="Update" user="Adviser" %} 
+        </form>
+        
+     </div>
+
+{% endblock content %}
+{% block extrascript %}
+
+    {% include 'soamgr/forms/oa_form_js.html' %}
+    
+{% endblock %}

@@ -7,6 +7,8 @@ from django.utils.translation import ugettext_lazy as _
 #from model_utils.models import TimeStampedModel
 from django.db.models.signals import post_save
 
+from project_dts.users.models import User
+
 optional = {
 	"null": True,
 	"blank": True,
@@ -38,8 +40,23 @@ class Doc(models.Model):
 		)
 
 	status = models.CharField(max_length=2, choices=STATUS_CHOICES, default='1',**optional)
-	#requestor = models.ForeignKey(, related_name='faculty_name',**optional)
-	is_received = models.BooleanField(_('Document is Received'),default=False)
+	requestor = models.ForeignKey(User, related_name='faculty_name',**optional)
+	
+	is_ovc_received = models.BooleanField(_('Document is Received at VC Office'),default=False)
+	is_ovc_validated = models.BooleanField(_('Document is Validated at VC Office'),default=False)
+	date_ovc_received = models.DateField(**optional)
+	date_ovc_validated = models.DateField(**optional)
+	
+	is_ovc_approved = models.BooleanField(_('Document is Received at VC Office'),default=False)
+	is_ovc_so_drafted = models.BooleanField(_('Document is Validated at VC Office'),default=False)
+	date_ovc_received = models.DateField(**optional)
+	date_ovc_validated = models.DateField(**optional)
+	
+	is_oc_received = models.BooleanField(_('Document is Received at Chancellor Office'),default=False)
+	is_oc_validated = models.BooleanField(_('Document is Validated at Chancellor Office'),default=False)
+	date_oc_received = models.DateField(**optional)
+	date_oc_validated = models.DateField(**optional)
+	
 	requirement1 = models.CharField(max_length=1, choices=REQ1_CHOICES, default='1',**optional)
 	requirement2 = models.CharField(max_length=1, choices=REQ2_CHOICES, default='1',**optional)
 	date_received = models.DateField()

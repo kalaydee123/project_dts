@@ -1,0 +1,17 @@
+from django.conf.urls import url
+
+from . import views
+
+
+urlpatterns = [    
+    url(
+        regex=r'^validator/$',
+        view=views.Validator_BaseView.as_view(),
+        name='validator_base'
+    ),
+    url(
+        regex=r'^raw/sample-page/$',
+        view=views.Raw_BaseView.as_view(),
+        name='sample_page'
+    ),
+]
