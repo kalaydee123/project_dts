@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	{% block title %}<title>My.IIT | Online Portal for Students, Faculty, Lecturers and Staff</title>{% endblock %}	
 	<link rel="icon" type="image/png" href="http://x4150my.msuiit.edu.ph/my/v2/assets/img/favicon.ico">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<link rel="stylesheet" href="./css/bootstrap.css">
-	<link rel="stylesheet" href="./css/bootstrap.mini.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="./css/bootstrap.com.css" type="text/css" media="print">
-	<link rel="stylesheet" href="./css/main.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/bootstrap.mini.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/bootstrap.com.css" type="text/css" media="print">
+	<link rel="stylesheet" href="/static/css/main.css" type="text/css">
+	<link rel="stylesheet" href="/static/Request/css/font-awesome.min.css" />
 	<link rel="apple-touch-icon" href="http://x4150my.msuiit.edu.ph/my/v2/assets/img/xapple-touch-icon.png.pagespeed.ic.CK3PJ--mMw.webp">
 	<link rel="apple-touch-icon-precomposed" href="http://x4150my.msuiit.edu.ph/my/v2/assets/img/xapple-touch-icon-precomposed.png.pagespeed.ic.CK3PJ--mMw.webp">
 	<!--[if lt IE 9]>
@@ -88,12 +90,16 @@
 			<div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 514.286px; background: rgb(119, 119, 119);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
 		</aside>
  
-		
-		
+		{% block content %}
+			
+			Content Area
+			
+		{% endblock %}
+
 		<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-sm modal-feedback">
 				<div class="modal-content">
-					<form accept-charset="UTF-8" action="http://x4150my.msuiit.edu.ph/my/v2/actions.php" name=	"frm-feedback" method="post">
+					<form accept-charset="UTF-8" action="http://x4150my.msuiit.edu.ph/my/v2/actions.php" name="frm-feedback" method="post">
 						<div class="modal-body">
 							<span class="feedback-status-message text-center hidden"></span>
 							<textarea class="form-control" id="feedback" name="feedback" placeholder="Leave a comment for My.IIT improvement..." rows="6"></textarea>
@@ -102,9 +108,9 @@
 					</form>
 				</div>
 			</div> 
-			<script src="./js/common.min.js"></script>
-			<script src="./js/jquery.slimscroll.min.js"></script>
-			<script src="./js/app.min.js"></script>
+			<script src="/static/js/common.min.js"></script>
+			<script src="/static/js/jquery.slimscroll.min.js"></script>
+			<script src="/static/js/app.min.js"></script>
 			<script type="text/javascript">$(document).ready(function(){$("#sidebar").slimscroll({height:"100vh",color:"#777",size:"7px"});});</script>
  
 			<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-37529404-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
