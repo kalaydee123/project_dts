@@ -117,15 +117,15 @@
 					<div class="box-body">
 						<div class="table-responsive">
 							<table class="table table-bordered table-hover table-striped table-evaluation">
-								<tbody><tr class="active">
-									<th width="3%">Tracking No</th>
+								<thead class="thead-inverse"><tr class="top_column">
+									<th width="3%">Tracking ID</th>
 									<th width="3%">Requestor</th>
 									<th width="3%">Request Type</th>
 									<th width="3%">Date Submitted</th>
 									<th width="3%">Time Lapse</th>
 									<th width="3%">Status</th>
 									<th width="3%">Action</th>
-								</tr>
+								</tr></thead>
 								<tr>
 									<td>000001 </td>
 									<td>Lemuel Clark Velasco :P </td>
@@ -197,18 +197,17 @@
 									<td>15 days</td>
 									<td>Pending</td>
 									<td><span class="btn btn-default">Recommend </span></td>
-								</tr></tbody>
+								</tr>
 							</table>
 						</div> 
 					</div> 
 				</div>
 			</section>
 		</div>
-		
 		<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-sm modal-feedback">
 				<div class="modal-content">
-					<form accept-charset="UTF-8" action="http://x4150my.msuiit.edu.ph/my/v2/actions.php" name=	"frm-feedback" method="post">
+					<form accept-charset="UTF-8" action="http://x4150my.msuiit.edu.ph/my/v2/actions.php" name="frm-feedback" method="post">
 						<div class="modal-body">
 							<span class="feedback-status-message text-center hidden"></span>
 							<textarea class="form-control" id="feedback" name="feedback" placeholder="Leave a comment for My.IIT improvement..." rows="6"></textarea>
@@ -217,9 +216,9 @@
 					</form>
 				</div>
 			</div> 
-			<script src="./js/common.min.js"></script>
-			<script src="./js/jquery.slimscroll.min.js"></script>
-			<script src="./js/app.min.js"></script>
+			<script src="/static/js/common.min.js"></script>
+			<script src="/static/js/jquery.slimscroll.min.js"></script>
+			<script src="/static/js/app.min.js"></script>
 			<script type="text/javascript">$(document).ready(function(){$("#sidebar").slimscroll({height:"100vh",color:"#777",size:"7px"});});</script>
  
 			<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-37529404-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
