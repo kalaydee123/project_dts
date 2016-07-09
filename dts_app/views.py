@@ -23,6 +23,15 @@ import time
 import constance
 from django.core.mail import send_mail
 
+'''
+Clyde - VC Dashboard
+Jerina - VC Validator Document Request Form
+Dante - Ch Dashboard
+
+
+
+'''
+
 # Create your views here.
 class Validator_BaseView(TemplateView):
     """
@@ -46,3 +55,10 @@ class Raw_BaseView(TemplateView):
     Just the raw html form
     """    
     template_name = "dts_app/raw_sample.html"
+    
+
+class OC_BaseView(TemplateView):
+    """
+    Just the raw html form
+    """    
+    template_name = "dts_app/index.html"

@@ -14,4 +14,9 @@ urlpatterns = [
         view=views.Raw_BaseView.as_view(),
         name='sample_page'
     ),
+    url(
+        regex=r'^raw/chancellor/$',
+        view=views.OC_BaseView.as_view(),
+        name='chancellor_base'
+    ),
 ]
