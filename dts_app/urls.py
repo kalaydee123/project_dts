@@ -19,4 +19,9 @@ urlpatterns = [
         view=views.OC_BaseView.as_view(),
         name='chancellor_base'
     ),
+        url(
+        regex=r'^raw/vice-chancellor/$',
+        view=views.OVC_BaseView.as_view(),
+        name='vchancellor_base'
+    ),
 ]
