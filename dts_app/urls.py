@@ -19,14 +19,24 @@ urlpatterns = [
         view=views.OC_BaseView.as_view(),
         name='chancellor_base'
     ),
-        url(
+    url(
         regex=r'^raw/vice-chancellor/$',
         view=views.OVC_BaseView.as_view(),
         name='vchancellor_base'
     ),
-        url(
+    url(
         regex=r'^raw/login/$',
         view=views.Login_BaseView.as_view(),
         name='login'
     ),
+    url(
+        regex=r'^raw/DTS/$',
+        view=views.DTS_BaseView.as_view(),
+        name='DTS'
+    ), 
+    url(
+        regex=r'^raw/Faculty-Visual_Map/$',
+        view=views.VisualMap_BaseView.as_view(),
+        name='Faculty-Visual_Map'
+    ),  
 ]
