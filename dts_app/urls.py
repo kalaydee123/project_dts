@@ -10,8 +10,8 @@ urlpatterns = [
         name='validator_base'
     ),
     url(
-        regex=r'^raw/sample-page/$',
-        view=views.Raw_BaseView.as_view(),
+        regex=r'^raw/vc-edit/$',
+        view=views.VC_EditView.as_view(),
         name='sample_page'
     ),
     url(
@@ -38,5 +38,10 @@ urlpatterns = [
         regex=r'^raw/Faculty-Visual_Map/$',
         view=views.VisualMap_BaseView.as_view(),
         name='Faculty-Visual_Map'
-    ),  
+    ),
+    url(
+        regex=r'^raw/request/$',
+        view=views.Request_Form_BaseView.as_view(),
+        name='request_form'
+    )
 ]

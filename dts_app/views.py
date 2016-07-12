@@ -50,11 +50,11 @@ class Validator_BaseView(TemplateView):
 
         return context
         
-class Raw_BaseView(TemplateView):
+class VC_EditView(TemplateView):
     """
     Just the raw html form
     """    
-    template_name = "dts_app/raw_sample.html"
+    template_name = "dts_app/vc_edit.html"
     
 
 class OC_BaseView(TemplateView):
@@ -80,10 +80,16 @@ class VisualMap_BaseView(TemplateView):
     """
     Just the raw html form
     """    
-    template_name = "dts_app/faculty-visual_map.html"\
+    template_name = "dts_app/faculty-visual_map.html"
 
 class DTS_BaseView(TemplateView):
     """
     Just the raw html form
     """    
     template_name = "dts_app/DTS.html"
+
+class Request_Form_BaseView(TemplateView):
+    """
+    Just the raw html form
+    """
+    template_name = "dts_app/request_form.html"
