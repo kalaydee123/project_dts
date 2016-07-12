@@ -33,68 +33,37 @@
                                     <tr class="top_column">
                                       <th>#</th>
                                       <th>Tracking ID</th>
+                                      <th>Requestor</th>
                                       <th>Request Type</th>
                                       <th>Date Submit</th>
                                       <th>Status</th>
                                       <th>Person Incharge</th>
                                       <th>Date Approved</th>
-                                      <th>Time Lapse</th>
-                                      <th>Remarks</th>
+                                      <!--<th>Time Lapse</th>-->
+                                      <th>OC Approval</th>
                                       <th></th>
                                     </tr>
                                 </thead>
 
                                   <tbody>
-                                    <tr class="hover_effect">
-                                      <th scope="row">1</th>
-                                      <td>00000001</td>
-                                      <td>Travel Order</td>
-                                      <td>August 8 2016</td>
-                                       <td>Processing</td>
-                                      <td>Jim Maykel</td>
-                                      <td></td>
-                                      <td>1 day</td>
-                                      <td>None</td>
-                                         <td>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-pencil"></span>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-trash"></span>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-open-file"></span>
-                                      </td>
-                                    </tr>
-
-                                     <tr>
-                                      <th scope="row">2</th>
-                                      <td>00000222</td>
-                                      <td>Travel Order</td>
-                                      <td>August 7 2016</td>
-                                       <td>Processing</td>
-                                      <td>Corina Ignacio</td>
-                                      <td></td>
-                                      <td>2 days</td>
-                                      <td>None</td>
-                                       <td>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-pencil"></span>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-trash"></span>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-open-file"></span>
-                                      </td>
-                                    </tr>
-
-                                     <tr>
-                                      <th scope="row">3</th>
-                                      <td>00550022</td>
-                                      <td>Travel Order</td>
-                                      <td>July 9 2016</td>
-                                       <td>Sustained</td>
-                                      <td>Alaicah Ambor</td>
-                                      <td>July 10 2016</td>
-                                      <td>1 day</td>
-                                      <td>None</td>
-                                         <td>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-pencil"></span>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-trash"></span>
-                                        <span style="padding-left:25px;" class="glyphicon glyphicon-open-file"></span>
-                                      </td>
-                                    </tr>
+                                    {% for doc in docs_oc_received %}
+                                      <tr class="hover_effect">
+                                          <td>{{ doc.id }}</td> 
+                                          <td>{{ doc.tracking_id }}</td>                                                                          
+                                          <td>{{ doc.requestor.get_full_name }}</td>
+                                          <td>{{ doc.get_doc_type_display }}</td>
+                                          <td>{{ doc.date_req_started|date:"m/d/Y" }}</td>
+                                          <td>{{ doc.get_status_display }}</td>
+                                          <td>{{ doc.person_incharge }}</td>
+                                          <td>{{ doc.date_req_finished|date:"d/m/Y" }} {{doc.date_req_finished|time:"H:i"}}</td>
+                                          <td>{{ doc.get_oc_approval_display }}</td>                                
+                                          <td>
+                                            <span style="padding-left:25px;" class="glyphicon glyphicon-pencil"></span>
+                                            <span style="padding-left:25px;" class="glyphicon glyphicon-trash"></span>
+                                            <span style="padding-left:25px;" class="glyphicon glyphicon-open-file"></span>
+                                          </td>
+                                      </tr>
+                                    {% endfor %}
                                   </tbody>
                         </table>
 

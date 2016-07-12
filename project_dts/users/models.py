@@ -17,7 +17,11 @@ class User(AbstractUser):
 
     # First Name and Last Name do not cover name patterns
     # around the globe.
-    name = models.CharField(_("Name of User"), blank=True, max_length=255)
+    user_id = models.CharField(_("User ID"), blank=True, max_length=10)
+    name = models.CharField(_("Name"), blank=True, max_length=50)
+    
+    department = models.CharField(_("Department"), blank=True, max_length=150)
+    college = models.CharField(_("College"), blank=True, max_length=150)    
     
     is_faculty = models.BooleanField(_('Is a Faculty?'), default=False)    
     is_ovc_validator = models.BooleanField(_('Is the Doc Validator for Office of Vice Chancellor?'), default=False)
