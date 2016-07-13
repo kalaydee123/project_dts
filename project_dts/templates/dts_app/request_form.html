@@ -16,9 +16,15 @@
 							<input type="text" class="form-control">
 							<label>College</label>
 							<select class="form-control">
-								<option></option>
+							{% for choice in choices_colleges %}	
+								<option value="{{ choice.value }}">{{choice.description}}</option>
+							{% endfor %}
 							</select>
 							<label>Type of Document</label>
+							<select class="form-control">
+								<option></option>
+							</select>
+							<label>Forward To:</label>
 							<select class="form-control">
 								<option></option>
 							</select>
@@ -30,21 +36,10 @@
 							<input type="text" class="form-control">
 							<label>Transaction Date</label>
 							<input type="date" class="form-control">
-						</div>
-					</div>
-				</div>
-				<br>
-				<div class="table-responsive">
-					<div class="panel panel-default">
-						<div class="panel-heading"><b>Forward To</b></div>
-						<div class="container">
-							<center><div class="panel-body">
-
-								<a href="#" class="btn btn-danger" style="padding-top:5px; margin-right:55px; width:150px; height:70px; font-size:40px;">OVCRE</a>
-								<a href="#" class="btn btn-danger" style="padding-top:5px; margin-right:55px; width:150px; height:70px; font-size:40px;">OVCAA</a>
-								<a href="#" class="btn btn-danger" style="padding-top:5px; margin-right:55px; width:150px; height:70px; font-size:40px;">OVCPD</a>
-								<a href="#" class="btn btn-danger" style="padding-top:5px; margin-right:55px; width:150px; height:70px; font-size:40px;">OVCAF</a>
-							</div></center>
+							<label>Person Incharge</label>
+							<select class="form-control">
+								<option></option>
+							</select>
 						</div>
 					</div>
 				</div>

@@ -51,8 +51,10 @@ class UserAdmin(AuthUserAdmin):
         'is_ovc_approver',
         'is_oc_validator',
         'is_oc_approver',
-    ]
-    
+        'college',
+        'department'
+    ] 
+
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {
@@ -65,6 +67,12 @@ class UserAdmin(AuthUserAdmin):
             'fields': (
                 'is_faculty', 'is_ovc_validator', 'is_ovc_approver',
                 'is_oc_validator', 'is_oc_approver')
+            }
+        ),
+        (_('User Details'), {
+            'fields': (
+                'college', 'department'
+                )
             }
         ),
     )

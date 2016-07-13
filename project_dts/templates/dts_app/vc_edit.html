@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% block title %}Raw Sample{% endblock %}
-
 {% block content %}		
 		
 	<section class="content-header">
@@ -15,9 +13,9 @@
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label>Requestor</label>
-							<input type="text" class="form-control">
+							<label class="form-control">{{ doc.requestor.get_full_name }}</label>
 							<label>College</label>
-							<input type="text" class="form-control">
+							<label class="form-control">{{ doc.requestor.get_college_display }}</label>
 							<label>Type of Document</label>
 							<input type="text" class="form-control">
 						</div>

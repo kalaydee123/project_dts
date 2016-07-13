@@ -10,7 +10,7 @@ urlpatterns = [
         name='validator_base'
     ),
     url(
-        regex=r'^raw/vc-edit/$',
+        regex=r'^raw/vc-edit/(?P<pk>\d+)/$',
         view=views.VC_EditView.as_view(),
         name='sample_page'
     ),

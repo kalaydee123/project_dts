@@ -27,243 +27,43 @@
                                     <tr class="top_column">
                                         <th>#</th>
                                         <th>Tracking ID</th>
-                                        <th>Request Type</th>
                                         <th>Requestor</th>
-                                        <th>Department</th>
-                                        <th>Incharge ID</th>
-                                        <th>Date Received</th>
-                                        <th>Action</th>
+                                        <th>Request Type</th>
+                                        <th>Date Submit</th>
+                                        <th>Status</th>
+                                        <th>Person Incharge</th>
+                                        <th>Date Approved</th>
+                                        <!--<th>Time Lapse</th>-->
+                                        <th>OVC Approval</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
-                                <tbody class="table_body">
-                                    <tr class="hover_effect">
-                                        <th scope="row">1</th>
-                                        <td>22000001</td>
-                                        <td>Travel Order</td>
-                                        <td>Dante Villaruel Jr</td>
-                                        <td>OVCAA</td>
-                                        <td>2001-1212</td>
-                                        <td>August 8 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
+                                  
+                                <tbody>
+                                    {% for doc in docs_ovc_received %}
+                                        <tr class="hover_effect">
+                                            <td>{{ doc.id }}</td> 
+                                            <td>{{ doc.tracking_id }}</td>
+                                            <td>{{ doc.requestor.get_full_name }}</td>
+                                            <td>{{ doc.get_doc_type_display }}</td>
+                                            <td>{{ doc.date_req_started|date:"m/d/Y" }}</td>
+                                            <td>{{ doc.get_status_display }}</td>
+                                            <td>{{ doc.person_incharge }}</td>
+                                            <td>{{ doc.date_req_finished|date:"d/m/Y" }} {{doc.date_req_finished|time:"H:i"}}</td>
+                                            <td>{{ doc.get_ovc_approval_display }}</td>                                
+                                            <td>
+                                                <a href="{% url 'dts_app:sample_page' doc.id %}">
+                                                    <span style="padding-left:25px;" class="glyphicon glyphicon-pencil"></span>
                                                 </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                <a href="{% url 'dts_app:sample_page' doc.id %}">
+                                                    <span style="padding-left:25px;" class="glyphicon glyphicon-trash"></span>
                                                 </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">2</th>
-                                        <td>500420001</td>
-                                        <td>Travel Order</td>
-                                        <td>Juan Dela Cruz</td>
-                                        <td>OVCAA</td>
-                                        <td>2005-1125</td>
-                                        <td>August 15 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
+                                                <a href="{% url 'dts_app:sample_page' doc.id %}">
+                                                    <span style="padding-left:25px;" class="glyphicon glyphicon-open-file"></span>
                                                 </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">3</th>
-                                        <td>33002001</td>
-                                        <td>Travel Order</td>
-                                        <td>Gene Manlimos</td>
-                                        <td>OVCRE</td>
-                                        <td>2001-1155</td>
-                                        <td>August 20 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">4</th>
-                                        <td>06000001</td>
-                                        <td>Travel Order</td>
-                                        <td>Iron Man</td>
-                                        <td>OVCAA</td>
-                                        <td>2006-2200</td>
-                                        <td>September 1 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">5</th>
-                                        <td>77003501</td>
-                                        <td>Travel Order</td>
-                                        <td>Captian Barbell</td>
-                                        <td>OVCAA</td>
-                                        <td>2006-6555</td>
-                                        <td>September 5 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">6</th>
-                                        <td>00790001</td>
-                                        <td>Travel Order</td>
-                                        <td>The Flash</td>
-                                        <td>OVCAA</td>
-                                        <td>2006-6633</td>
-                                        <td>September 6 2016</td>     
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">7</th>
-                                        <td>00045001</td>
-                                        <td>Travel Order</td>
-                                        <td>Hawk Eye</td> 
-                                        <td>OVCAA</td>
-                                        <td>2001-9911</td>
-                                        <td>September 15 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">8</th>
-                                        <td>00250001</td>
-                                        <td>Travel Order</td>
-                                        <td>Dante Villaruel Jr</td>
-                                        <td>OVCAA</td>
-                                        <td>2010-0001</td>
-                                        <td>September 16 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">9</th>
-                                        <td>00078001</td>
-                                        <td>Travel Order</td>
-                                        <td>Gene Manlimos</td> 
-                                        <td>OVCAA</td>
-                                        <td>1998-5252</td>
-                                        <td>October 1 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">10</th>
-                                        <td>00680001</td>
-                                        <td>Travel Order</td>
-                                        <td>Juan Dela Cruz</td>
-                                        <td>OVCAA</td>
-                                        <td>2001-9999</td>
-                                        <td>October 2 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">11</th>
-                                        <td>05600001</td>
-                                        <td>Travel Order</td>
-                                        <td>Captian Barbell</td>
-                                        <td>OVCAA</td>
-                                        <td>2001-9999</td>
-                                        <td>October 5 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover_effect">
-                                        <th scope="row">12</th>
-                                        <td>00690001</td>
-                                        <td>Travel Order</td>
-                                        <td>Captain America</td>
-                                        <td>OVCAA</td>
-                                        <td>2001-5652</td>
-                                        <td>October 10 2016</td>
-                                        <td>
-                                            <div class="button_prop">
-                                                <a class="edit_icon" href="#">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                </a>
-                                                <a class="ok_icon" href="#">
-                                                    <span class="glyphicon glyphicon-ok"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>                
