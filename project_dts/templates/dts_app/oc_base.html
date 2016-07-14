@@ -29,13 +29,11 @@
                                         <th>Tracking ID</th>
                                         <th>Requestor</th>
                                         <th>Request Type</th>
-                                        <th>Date Submit</th>
-                                        <th>Status</th>
                                         <th>Person Incharge</th>
-                                        <th>Date Approved</th>
+                                        <th>Date Received</th>
                                         <!--<th>Time Lapse</th>-->
-                                        <th>OC Approval</th>
-                                        <th></th>
+                                        <th>Department</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                   
@@ -46,11 +44,9 @@
                                             <td>{{ doc.tracking_id }}</td>
                                             <td>{{ doc.requestor.get_full_name }}</td>
                                             <td>{{ doc.get_doc_type_display }}</td>
-                                            <td>{{ doc.date_req_started|date:"m/d/Y" }}</td>
-                                            <td>{{ doc.get_status_display }}</td>
                                             <td>{{ doc.person_incharge }}</td>
-                                            <td>{{ doc.date_req_finished|date:"d/m/Y" }} {{doc.date_req_finished|time:"H:i"}}</td>
-                                            <td>{{ doc.get_oc_approval_display }}</td>                                
+                                            <td>{{ doc.date_oc_received|date:"d/m/Y" }} {{doc.date_oc_received|time:"H:i"}}</td>
+                                            <td>OVCRE</td>                                
                                             <td>
                                                 <span style="padding-left:25px;" class="glyphicon glyphicon-pencil"></span>
                                                 <span style="padding-left:25px;" class="glyphicon glyphicon-trash"></span>

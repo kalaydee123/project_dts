@@ -16,18 +16,22 @@
 							<input type="text" class="form-control">
 							<label>College</label>
 							<select class="form-control">
-							{% for choice in choices_colleges %}	
-								<option value="{{ choice.value }}">{{choice.description}}</option>
-							{% endfor %}
-							</select>
+                                <option value="">-----</option>
+                                <option value="">College of Arts and Social Sciences </option>
+                                <option value="">College of Business Administration and Accountancy </option>
+                                <option value="">College of Education </option>
+                                <option value="">College of Engineering </option>
+                                <option value="">College of Science and Mathematics </option>
+                                <option value="">School of Engineering Technology </option>
+                                <option value="">School of Computer Studies </option>
+                            </select>
 							<label>Type of Document</label>
 							<select class="form-control">
-								<option></option>
-							</select>
-							<label>Forward To:</label>
-							<select class="form-control">
-								<option></option>
-							</select>
+                                <option value="">-----</option>
+                                <option value="">Travel Order </option>
+                                <option value="">Incentive Request </option>
+                                <option value="">Paper Presentation</option>
+                            </select>
 						</div>
 					</div>
 					<div class="col-sm-6">
@@ -36,10 +40,20 @@
 							<input type="text" class="form-control">
 							<label>Transaction Date</label>
 							<input type="date" class="form-control">
-							<label>Person Incharge</label>
-							<select class="form-control">
-								<option></option>
-							</select>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="table-responsive">
+					<div class="panel panel-default">
+						<div class="panel-heading"><b>Forward To</b></div>
+						<div class="container">
+							<center><div class="panel-body">
+								<button type="submit" name="ovcre" class="btn btn-danger" style="padding-top:10px; margin-right:55px; width:150px; height:70px; font-size:35px;">OVCRE</button>
+								<button type="submit" name="ovcaa" class="btn btn-danger" style="padding-top:10px; margin-right:55px; width:150px; height:70px; font-size:35px;">OVCAA</button>
+								<button type="submit" name="ovcpd" class="btn btn-danger" style="padding-top:10px; margin-right:55px; width:150px; height:70px; font-size:35px;">OVCPD</button>
+								<button type="submit" name="ovcaf" class="btn btn-danger" style="padding-top:10px; margin-right:55px; width:150px; height:70px; font-size:35px;">OVCAF</button>
+							</div></center>
 						</div>
 					</div>
 				</div>
