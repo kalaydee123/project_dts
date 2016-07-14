@@ -1,59 +1,51 @@
-{% extends 'base.html' %}
-
-{% block content %}		
-		
-	<section class="content-header">
-		<h1>Edit Request Form </h1>
-	</section>
-		
-	<section class="content">
-		<div class="box">
-			<div class="box-body">
-				<div class="table-responsive">
-					<div class="col-sm-6">
-						<div class="form-group">
-							<label>Requestor</label>
-							<label class="form-control">{{ doc.requestor.get_full_name }}</label>
-							<label>College</label>
-							<label class="form-control">{{ doc.requestor.get_college_display }}</label>
-							<label>Type of Document</label>
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="form-group">
-							<label>Tracking ID</label>
-							<input type="text" class="form-control">
-							<label>Date</label>
-							<input type="text" class="form-control">
-							<label></label>
-						</div>
-					</div>
-					
+	
+	<div class="modal-content">		
+		<div class="modal-header"><h1>Edit Request Form </h1></div>		
+		<div class="modal-body">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Requestor</label>
+					<label class="form-control">{{ doc.requestor.get_full_name }}</label>
+					<label>College</label>
+					<label class="form-control">{{ doc.requestor.get_college_display }}</label>
+					<label>Type of Document</label>
+					<label class="form-control">{{ doc.get_doc_type_display }}</label>
 				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading"><b>Remarks from OVCRE</b></div>
-					<div class="panel-body" style="text-align:center; vertical-align:middle">
-						<div class="checkbox-inline"><label><input type="checkbox">Attach Biodata</label></div>
-						<div class="checkbox-inline"><label><input type="checkbox">Attach Request Letter</label></div>
-						<br>
-						<div class="checkbox-inline"><label><input type="checkbox">Revise Paper</label></div>
-						<div class="checkbox-inline"><label><input type="checkbox">Revise Letter</label></div>
-						<br>
-						<div class="checkbox-inline"><label><input type="checkbox">Change Font Type</label></div>
-						<div class="checkbox-inline"><label><input type="checkbox">Change Title</label></div>
-						<br>
-						<div class="checkbox-inline"><label><input type="checkbox">Overall Revision</label></div>
-						<div class="checkbox-inline"><label><input type="checkbox">Others</label><input type="text"></div>
+			</div>
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Tracking ID</label>
+					<label class="form-control">{{ doc.tracking_id }}</label>
+					<label>Date</label>
+					<label class="form-control">{{ doc.date_ovc_received }} {{ doc.date_ovc_received|time:"H:i" }}</label>
+					<label></label>
+				</div>
+			</div>
+					
+			<div class="panel panel-default">
+				<div class="panel-heading"><b>Remarks from Office</b></div>
+				<div class="panel-body">
+					<table>
+						<tr>
+							<td class="checkbox"><label><input type="checkbox">Attach Biodata</label></td>
+							<td class="checkbox"><label><input type="checkbox">Attach Request Letter</label></td>
+							<td class="checkbox"><label><input type="checkbox">Revise Paper</label></td>
+							<td class="checkbox"><label><input type="checkbox">Revise Letter</label></td>
+							<td>
+								<td class="checkbox"><label><input type="checkbox">Change Font Type</label></td>
+								<td class="checkbox"><label><input type="checkbox">Change Title</label></td>
+								<td class="checkbox"><label><input type="checkbox">Overall Revision</label></td>
+								<td class="checkbox"><label><input type="checkbox">Others</label><input type="text"></td>
+							</td>	
+						</tr>
+					</table>
+				</div>
+				<div class="panel-footer clearfix">
+					<div class="pull-right">
+						<a href="#" class="btn btn-default">Return</a>
+						<a href="#" class="btn btn-default">Forward</a>
 					</div>
-					<div class="panel-footer clearfix">
-						<div class="pull-right">
-							<a href="#" class="btn btn-default">Forward to VC</a>
-						</div>
-					</div>
-				</div> 
+				</div>
 			</div> 
 		</div>
-	</section>
-		
-{% endblock  %}
+	</div> 

@@ -29,13 +29,11 @@
                                         <th>Tracking ID</th>
                                         <th>Requestor</th>
                                         <th>Request Type</th>
-                                        <th>Date Submit</th>
-                                        <th>Status</th>
                                         <th>Person Incharge</th>
-                                        <th>Date Approved</th>
-                                        <!--<th>Time Lapse</th>-->
-                                        <th>OVC Approval</th>
-                                        <th></th>
+                                        <th>Date Received</th>
+                                        <th>Department</th>
+                                        <th>Remarks</th>
+                                        <th style="padding-left:40px;">Action</th>
                                     </tr>
                                 </thead>
                                   
@@ -46,20 +44,20 @@
                                             <td>{{ doc.tracking_id }}</td>
                                             <td>{{ doc.requestor.get_full_name }}</td>
                                             <td>{{ doc.get_doc_type_display }}</td>
-                                            <td>{{ doc.date_req_started|date:"m/d/Y" }}</td>
-                                            <td>{{ doc.get_status_display }}</td>
                                             <td>{{ doc.person_incharge }}</td>
-                                            <td>{{ doc.date_req_finished|date:"d/m/Y" }} {{doc.date_req_finished|time:"H:i"}}</td>
-                                            <td>{{ doc.get_ovc_approval_display }}</td>                                
+                                            <td>{{ doc.date_ovc_received|date:"d/m/Y" }} {{doc.date_ovc_received|time:"H:i"}}</td>
+                                            <td>OVCRE</td>
                                             <td>
-                                                <a href="{% url 'dts_app:sample_page' doc.id %}">
+                                                <a href="#">
+                                                    <span style="padding-left:30px;" class="glyphicon glyphicon-eye-open"></span>
+                                                </a>
+                                            </td>                                
+                                            <td>
+                                                <a href="{% url 'dts_app:sample_page' doc.id %}" data-toggle="modal" data-target="#reqModal">
                                                     <span style="padding-left:25px;" class="glyphicon glyphicon-pencil"></span>
                                                 </a>
                                                 <a href="{% url 'dts_app:sample_page' doc.id %}">
-                                                    <span style="padding-left:25px;" class="glyphicon glyphicon-trash"></span>
-                                                </a>
-                                                <a href="{% url 'dts_app:sample_page' doc.id %}">
-                                                    <span style="padding-left:25px;" class="glyphicon glyphicon-open-file"></span>
+                                                    <span style="padding-left:25px;" class="glyphicon glyphicon-ok"></span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -77,6 +75,12 @@
                 </div>
             </div>
         </section>
+
+        <div class="modal fade" id="reqModal">
+            <div class="modal-dialog">
+                {% include 'dts_app/vc_edit.html' %}    
+            </div>
+        </div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
