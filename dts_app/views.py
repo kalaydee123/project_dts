@@ -110,18 +110,28 @@ class Login_BaseView(TemplateView):
     Just the raw html form
     """    
     template_name = "dts_app/login.html"
+    
+    
+class Search_BaseView(TemplateView):
+    """
+    Just the raw html form
+    """    
+    template_name = "dts_app/faculty_search.html"
+    
 
 class VisualMap_BaseView(TemplateView):
     """
     Just the raw html form
     """    
-    template_name = "dts_app/faculty-visual_map.html"
+    template_name = "dts_app/faculty_visual_map.html"
+    
 
 class DTS_BaseView(TemplateView):
     """
     Just the raw html form
     """    
     template_name = "dts_app/DTS.html"
+    
 
 class Request_Form_BaseView(TemplateView):
     """

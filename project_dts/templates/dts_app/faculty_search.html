@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Raw Sample{% endblock %}
+
+{% block content %}
+    
+    <style>
+        
+        #custom-search-input {
+            margin:0;
+            margin-top: 10px;
+            padding: 0;
+        }
+    
+        #custom-search-input .search-query {
+            padding-right: 3px;
+            padding-right: 4px \9;
+            padding-left: 3px;
+            padding-left: 4px \9;
+            /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    
+            margin-bottom: 0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+    
+        #custom-search-input button {
+            border: 0;
+            background: none;
+            /** belows styles are working good */
+            padding: 2px 5px;
+            margin-top: 2px;
+            position: relative;
+            left: -28px;
+            /* IE7-8 doesn't have border-radius, so don't indent the padding */
+            margin-bottom: 0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            color:#D9230F;
+        }
+    
+        .search-query:focus + button {
+            z-index: 3;   
+        }
+
+    </style>
+
+    <br/>
+    <br/>
+    <div class="container">
+	<div class="row">
+		<h2>Enter the tracking</h2>
+           <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" id="search_box" class="  search-query form-control" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button id="search_button" class="btn btn-danger" type="button">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+{% endblock %}
+
+{% block extrascript %}    
+    <script>
+        $('#search_button').click(function() {
+            var tracking_id = $('#search_box').val();
+            
+            var visual_map_url = "http://127.0.0.1:8000/dts_app/raw/faculty-visual-map/" + tracking_id + "/";
+            console.log(visual_map_url);
+            window.location = visual_map_url;
+        });
+    </script>        
+{% endblock %}

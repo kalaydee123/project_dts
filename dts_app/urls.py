@@ -35,9 +35,14 @@ urlpatterns = [
         name='DTS'
     ), 
     url(
-        regex=r'^raw/Faculty-Visual_Map/$',
+        regex=r'^raw/faculty-search/$',
+        view=views.Search_BaseView.as_view(),
+        name='faculty_search'
+    ),
+    url( 
+        regex=r'^raw/faculty-visual-map/(?P<tracking_id>.*)/$',
         view=views.VisualMap_BaseView.as_view(),
-        name='Faculty-Visual_Map'
+        name='faculty_visual_map'
     ),
     url(
         regex=r'^raw/request/$',

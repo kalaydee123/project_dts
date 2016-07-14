@@ -23,6 +23,7 @@ from django.views import defaults as default_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     
+    url(r'^$', TemplateView.as_view(template_name='dts_app/faculty_search.html'), name="faculty_search_base"),
     url(r'^users/', include("project_dts.users.urls", namespace="users")),
     url(r'^dts_app/', include("dts_app.urls", namespace="dts_app")),
 ]
