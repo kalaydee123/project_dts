@@ -125,6 +125,17 @@ class VisualMap_BaseView(TemplateView):
     """    
     template_name = "dts_app/faculty_visual_map.html"
     
+    def get_context_data(self, **kwargs):
+        context = super(VisualMap_BaseView, self).get_context_data(**kwargs)
+        
+        pk=self.kwargs.get('pk')
+        print pk
+        tracking_id=str(self.kwargs.get('tracking_id'))
+        print tracking_id
+        context['doc'] = Doc.objects.get(tracking_id=tracking_id)         
+
+        return context
+    
 
 class DTS_BaseView(TemplateView):
     """
